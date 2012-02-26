@@ -22,31 +22,21 @@
 /**
  * @namespace
  */
-namespace ZendTest\Service\StrikeIron;
+namespace ZendTest\Service\StrikeIron\StrikeIronTest;
 
 /**
- * Test helper
- */
-
-/**
- * @see \Zend\Service\StrikeIron\Exception
- */
-
-
-/**
+ * Stub for Zend_Service_StrikeIron_Base
+ *
  * @category   Zend
  * @package    Zend_Service_StrikeIron
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2012 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Service
- * @group      Zend_Service_StrikeIron
  */
-class ExceptionTest extends \PHPUnit_Framework_TestCase
+class StubbedBase
 {
-    public function testInheritsFromZendException()
+    public function __construct($options)
     {
-        $exception = new \Zend\Service\StrikeIron\Exception\RuntimeException();
-        $this->assertInstanceOf('Zend\Service\StrikeIron\Exception', $exception);
+        $this->options = $options;
     }
 }
