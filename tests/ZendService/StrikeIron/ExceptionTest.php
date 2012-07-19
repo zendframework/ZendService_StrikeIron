@@ -8,7 +8,7 @@
  * @package   Zend_Service
  */
 
-namespace ZendTest\Service\StrikeIron;
+namespace ZendServiceTest\StrikeIron;
 
 /**
  * @category   Zend
@@ -21,7 +21,7 @@ class ExceptionTest extends \PHPUnit_Framework_TestCase
 {
     public function testInheritsFromZendException()
     {
-        $exception = new \Zend\Service\StrikeIron\Exception\RuntimeException();
-        $this->assertInstanceOf('Zend\Service\StrikeIron\Exception\ExceptionInterface', $exception);
+        $exception = new \ZendService\StrikeIron\Exception\RuntimeException();
+        $this->assertInstanceOf('ZendService\StrikeIron\Exception\ExceptionInterface', $exception);
     }
 }

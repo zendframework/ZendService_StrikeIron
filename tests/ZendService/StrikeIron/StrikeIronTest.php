@@ -8,7 +8,7 @@
  * @package   Zend_Service
  */
 
-namespace ZendTest\Service\StrikeIron;
+namespace ZendServiceTest\StrikeIron;
 
 /**
  * @category   Zend
@@ -24,26 +24,26 @@ class StrikeIronTest extends \PHPUnit_Framework_TestCase
         // stub out SOAPClient instance
         $this->soapClient = new \stdclass();
         $this->options    = array('client' => $this->soapClient);
-        $this->strikeIron = new \Zend\Service\StrikeIron\StrikeIron($this->options);
+        $this->strikeIron = new \ZendService\StrikeIron\StrikeIron($this->options);
     }
 
     public function testFactoryThrowsOnBadName()
     {
-        $this->setExpectedException('Zend\Service\StrikeIron\Exception\ExceptionInterface', 'Class file not found');
+        $this->setExpectedException('ZendService\StrikeIron\Exception\ExceptionInterface', 'Class file not found');
         $this->strikeIron->getService(array('class' => 'BadServiceNameHere'));
     }
 
     public function testFactoryReturnsServiceByStrikeIronClass()
     {
         $base = $this->strikeIron->getService(array('class' => 'Base'));
-        $this->assertInstanceOf('Zend\Service\StrikeIron\Base', $base);
+        $this->assertInstanceOf('ZendService\StrikeIron\Base', $base);
         $this->assertSame(null, $base->getWsdl());
         $this->assertSame($this->soapClient, $base->getSoapClient());
     }
 
     public function testFactoryReturnsServiceAnySlashedClass()
     {
-        $class = 'ZendTest\Service\StrikeIron\StrikeIronTest\StubbedBase';
+        $class = 'ZendServiceTest\StrikeIron\StrikeIronTest\StubbedBase';
         $stub = $this->strikeIron->getService(array('class' => $class));
         $this->assertInstanceOf($class, $stub);
     }
@@ -57,14 +57,14 @@ class StrikeIronTest extends \PHPUnit_Framework_TestCase
 
     public function testFactoryPassesOptionsFromConstructor()
     {
-        $class = 'ZendTest\Service\StrikeIron\StrikeIronTest\StubbedBase';
+        $class = 'ZendServiceTest\StrikeIron\StrikeIronTest\StubbedBase';
         $stub = $this->strikeIron->getService(array('class' => $class));
         $this->assertEquals($this->options, $stub->options);
     }
 
     public function testFactoryMergesItsOptionsWithConstructorOptions()
     {
-        $options = array('class' => 'ZendTest\Service\StrikeIron\StrikeIronTest\StubbedBase',
+        $options = array('class' => 'ZendServiceTest\StrikeIron\StrikeIronTest\StubbedBase',
                          'foo'   => 'bar');
 
         $mergedOptions = array_merge($options, $this->options);

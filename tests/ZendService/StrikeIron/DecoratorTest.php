@@ -8,9 +8,9 @@
  * @package   Zend_Service
  */
 
-namespace ZendTest\Service\StrikeIron;
+namespace ZendServiceTest\StrikeIron;
 
-use Zend\Service\StrikeIron;
+use ZendService\StrikeIron;
 
 /**
  * @category   Zend

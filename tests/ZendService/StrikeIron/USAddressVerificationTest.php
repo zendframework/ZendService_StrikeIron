@@ -8,7 +8,7 @@
  * @package   Zend_Service
  */
 
-namespace ZendTest\Service\StrikeIron;
+namespace ZendServiceTest\StrikeIron;
 
 /**
  * @category   Zend
@@ -22,12 +22,12 @@ class USAddressVerificationTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->soapClient = new \stdclass();
-        $this->service = new \Zend\Service\StrikeIron\USAddressVerification(array('client' => $this->soapClient));
+        $this->service = new \ZendService\StrikeIron\USAddressVerification(array('client' => $this->soapClient));
     }
 
     public function testInheritsFromBase()
     {
-        $this->assertInstanceOf('Zend\Service\StrikeIron\Base', $this->service);
+        $this->assertInstanceOf('ZendService\StrikeIron\Base', $this->service);
     }
 
     public function testHasCorrectWsdl()
@@ -38,9 +38,9 @@ class USAddressVerificationTest extends \PHPUnit_Framework_TestCase
 
     public function testInstantiationFromFactory()
     {
-        $strikeIron = new \Zend\Service\StrikeIron\StrikeIron(array('client' => $this->soapClient));
+        $strikeIron = new \ZendService\StrikeIron\StrikeIron(array('client' => $this->soapClient));
         $client = $strikeIron->getService(array('class' => 'USAddressVerification'));
 
-        $this->assertInstanceOf('Zend\Service\StrikeIron\USAddressVerification', $client);
+        $this->assertInstanceOf('ZendService\StrikeIron\USAddressVerification', $client);
     }
 }

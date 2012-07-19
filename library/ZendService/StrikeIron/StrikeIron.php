@@ -8,7 +8,7 @@
  * @package   Zend_Service
  */
 
-namespace Zend\Service\StrikeIron;
+namespace ZendService\StrikeIron;
 
 /**
  * This class allows StrikeIron authentication credentials to be specified
@@ -42,7 +42,7 @@ class StrikeIron
      * instance.
      *
      * @param  null|string  $options  Service options
-     * @return object       Zend\Service\StrikeIron\* instance
+     * @return object       ZendService\StrikeIron\* instance
      * @throws Exception\RuntimeException if service class not found
      */
     public function getService($options = array())

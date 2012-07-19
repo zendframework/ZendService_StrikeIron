@@ -8,9 +8,9 @@
  * @package   Zend_Service
  */
 
-namespace ZendTest\Service\StrikeIron;
+namespace ZendServiceTest\StrikeIron;
 
-use Zend\Service\StrikeIron;
+use ZendService\StrikeIron;
 
 /**
  * @category   Zend
@@ -36,10 +36,10 @@ class NoSoapTest extends \PHPUnit_Framework_TestCase
             $base = new StrikeIron\Base(array('client'   => $this->soapClient,
                                                              'username' => 'user',
                                                              'password' => 'pass'));
-            $this->fail('Expecting exception of type Zend\Service\StrikeIron\Exception\RuntimeException');
+            $this->fail('Expecting exception of type ZendService\StrikeIron\Exception\RuntimeException');
         } catch (StrikeIron\Exception\RuntimeException $e) {
-            $this->assertInstanceOf('Zend\Service\StrikeIron\Exception\RuntimeException', $e,
-                'Expecting exception of type Zend\Service\StrikeIron\Exception\RuntimeException, got '
+            $this->assertInstanceOf('ZendService\StrikeIron\Exception\RuntimeException', $e,
+                'Expecting exception of type ZendService\StrikeIron\Exception\RuntimeException, got '
                 . get_class($e));
             $this->assertEquals('SOAP extension is not enabled', $e->getMessage());
         }

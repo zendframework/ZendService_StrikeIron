@@ -8,7 +8,7 @@
  * @package   Zend_Service
  */
 
-namespace Zend\Service\StrikeIron;
+namespace ZendService\StrikeIron;
 
 /**
  * Decorates a StrikeIron response object returned by the SOAP extension

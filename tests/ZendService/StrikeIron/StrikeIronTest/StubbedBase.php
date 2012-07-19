@@ -8,7 +8,7 @@
  * @package   Zend_Service
  */
 
-namespace ZendTest\Service\StrikeIron\StrikeIronTest;
+namespace ZendServiceTest\StrikeIron\StrikeIronTest;
 
 /**
  * Stub for Zend_Service_StrikeIron_Base

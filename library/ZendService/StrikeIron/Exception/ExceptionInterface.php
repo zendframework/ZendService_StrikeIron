@@ -8,7 +8,7 @@
  * @package   Zend_Service
  */
 
-namespace Zend\Service\StrikeIron\Exception;
+namespace ZendService\StrikeIron\Exception;
 
 /**
  * @category   Zend
